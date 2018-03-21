@@ -10,12 +10,18 @@ import UIKit
 
 class ColorDetailViewController: UIViewController {
 
+    var color: Color?
+    
+    @IBOutlet weak var colorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        colorLabel.text = color?.name
+        self.view.backgroundColor = color?.uiColor
+        self.title = color?.name
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
